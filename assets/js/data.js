@@ -543,47 +543,47 @@ var projects = [
     sourceCodeLink: '', // Facultatif, si le code est open source
     rate: 1
   },
-  {
-    name: 'Cedi Grove Partners',
-    shortDescription: 'Corporate website for a cybersecurity and talent solutions firm',
-    categoryLabel: 'Website Development',
-    category: 'branding',
-    client: 'Weblysoft LLC',
-    date: '2025', // Ajouter la date si connue
-    url: 'https://cedigrovepartners.com/', // URL du site si disponible
-    coverImage: '/assets/img/portfolio/cedi-grove (1).png', // Capture d’écran principale
-    gallery: ['/assets/img/portfolio/cedi-grove (1).png', '/assets/img/portfolio/cedi-grove (2).png', '/assets/img/portfolio/cedi-grove (3).png', '/assets/img/portfolio/cedi-grove (4).png', '/assets/img/portfolio/cedi-grove (5).png'], // Screenshots secondaires
-    description: `Cedi Grove Partners is a cybersecurity and career development firm. Their corporate website serves as a central hub for showcasing their capabilities in cybersecurity strategy, RMF compliance, software development, and data analytics. It also includes matchmaking tools and resources for employers and job seekers, offering recruitment, coaching, and application optimization services.`,
-    technologies: ['HTML5', 'CSS3', 'TailwindCSS', 'JavaScript', 'AOS.js'],
-    features: [
-      'Presentation of cybersecurity services and consulting expertise',
-      'Dedicated sections for employers and job seekers',
-      'Job board and search functionalities by skills, location, and experience',
-      'Interactive capabilities section detailing areas of expertise',
-      'Clear call-to-actions for recruitment and coaching services',
-      'Bilingual-friendly design for future scalability',
-      'Modern and responsive layout across all devices'
-    ],
-    responsibilities: [
-      'Developed and structured the corporate website frontend using Tailwindcss and JavaScript',
-      'Implemented clean and modern UI reflecting the firm’s values and technical expertise',
-      'Optimized layout and navigation for diverse audiences: employers, candidates, and partners',
-      'Integrated animations and interactive elements to enhance user engagement',
-      'Optimized page structure and layout for accessibility and performance'
-    ],
-    challenges: [
-      'Presenting a wide range of services without overwhelming users',
-      'Balancing corporate identity with a friendly and accessible user experience',
-      'Organizing multi-audience content into a coherent and intuitive navigation flow'
-    ],
-    solutions: [
-      'Designed a modular structure with clear content separation by user type',
-      'Used progressive disclosure and accordions to manage dense information',
-      'Incorporated user-focused CTAs and visual hierarchy for easy access to core features'
-    ],
-    sourceCodeLink: '', // Optionnel
-    rate: 1
-  },
+  // {
+  //   name: 'Cedi Grove Partners',
+  //   shortDescription: 'Corporate website for a cybersecurity and talent solutions firm',
+  //   categoryLabel: 'Website Development',
+  //   category: 'branding',
+  //   client: 'Weblysoft LLC',
+  //   date: '2025', // Ajouter la date si connue
+  //   url: 'https://cedigrovepartners.com/', // URL du site si disponible
+  //   coverImage: '/assets/img/portfolio/cedi-grove (1).png', // Capture d’écran principale
+  //   gallery: ['/assets/img/portfolio/cedi-grove (1).png', '/assets/img/portfolio/cedi-grove (2).png', '/assets/img/portfolio/cedi-grove (3).png', '/assets/img/portfolio/cedi-grove (4).png', '/assets/img/portfolio/cedi-grove (5).png'], // Screenshots secondaires
+  //   description: `Cedi Grove Partners is a cybersecurity and career development firm. Their corporate website serves as a central hub for showcasing their capabilities in cybersecurity strategy, RMF compliance, software development, and data analytics. It also includes matchmaking tools and resources for employers and job seekers, offering recruitment, coaching, and application optimization services.`,
+  //   technologies: ['HTML5', 'CSS3', 'TailwindCSS', 'JavaScript', 'AOS.js'],
+  //   features: [
+  //     'Presentation of cybersecurity services and consulting expertise',
+  //     'Dedicated sections for employers and job seekers',
+  //     'Job board and search functionalities by skills, location, and experience',
+  //     'Interactive capabilities section detailing areas of expertise',
+  //     'Clear call-to-actions for recruitment and coaching services',
+  //     'Bilingual-friendly design for future scalability',
+  //     'Modern and responsive layout across all devices'
+  //   ],
+  //   responsibilities: [
+  //     'Developed and structured the corporate website frontend using Tailwindcss and JavaScript',
+  //     'Implemented clean and modern UI reflecting the firm’s values and technical expertise',
+  //     'Optimized layout and navigation for diverse audiences: employers, candidates, and partners',
+  //     'Integrated animations and interactive elements to enhance user engagement',
+  //     'Optimized page structure and layout for accessibility and performance'
+  //   ],
+  //   challenges: [
+  //     'Presenting a wide range of services without overwhelming users',
+  //     'Balancing corporate identity with a friendly and accessible user experience',
+  //     'Organizing multi-audience content into a coherent and intuitive navigation flow'
+  //   ],
+  //   solutions: [
+  //     'Designed a modular structure with clear content separation by user type',
+  //     'Used progressive disclosure and accordions to manage dense information',
+  //     'Incorporated user-focused CTAs and visual hierarchy for easy access to core features'
+  //   ],
+  //   sourceCodeLink: '', // Optionnel
+  //   rate: 1
+  // },
   {
     name: 'Dietch Consulting',
     shortDescription: 'Trilingual family counseling and marriage support website',
