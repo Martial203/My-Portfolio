@@ -7,44 +7,44 @@ const categories = {
 const categoriesArray = ['Mobile app', 'Web app', 'Website'];
 
 var projects = [
-  {
-    name: 'Afrilease',
-    shortDescription: 'Mobile-first platform for streamlined rental property management',
-    categoryLabel: 'Mobile App (Property Tech)', // e.g., "Mobile App", "Property Tech"
-    category: 'app',
-    client: 'Weblysoft LLC',
-    date: '2024',
-    url: '', // Add live link if applicable
-    coverImage: '/assets/img/portfolio/afrilease.png', // Optional: add a banner image
-    gallery: ['/assets/img/portfolio/afrilease.png'], // Optional: array of screenshots
-    description: `Afrilease is a dual mobile application ecosystem designed to modernize rental property operations. The platform enables tenants to manage their rental experience—paying rent and utility bills, submitting maintenance requests, accessing digital lease documents, and communicating directly with landlords. On the other side, landlords benefit from tools to monitor property status, manage technicians, assign property managers, review payment reports, and maintain direct contact with tenants via integrated messaging.`,
-    technologies: ['Ionic', 'Angular', 'Capacitor', 'SCSS'],
-    features: [
-      'Secure rent and utility payments through mobile interface',
-      'Real-time messaging between landlords and tenants',
-      'Maintenance request and technician assignment system',
-      'Digital lease document access and export',
-      'Role-based dashboards with real-time data synchronization'
-    ],
-    responsibilities: [
-      'Led the frontend development of both tenant and landlord applications using Ionic and Angular',
-      'Implemented responsive UI components and dynamic interactions tailored to distinct user roles',
-      'Integrated RESTful APIs for secure data handling and state synchronization',
-      'Collaborated with backend and design teams to ensure UX consistency across both applications'
-    ],
-    challenges: [
-      'Designing two seamless but distinct user experiences within a single platform',
-      'Maintaining real-time communication between users across different applications',
-      'Ensuring mobile performance across varied device types and screen sizes'
-    ],
-    solutions: [
-      'Adopted modular architecture with reusable UI components and role-specific logic',
-      'Integrated WebSocket services for real-time chat and event handling',
-      'Optimized rendering strategies and applied lazy-loading techniques to enhance mobile performance'
-    ],
-    sourceCodeLink: '', // Add a GitHub or Bitbucket link if shareable
-    rate: 1
-  },
+  // {
+  //   name: 'Afrilease',
+  //   shortDescription: 'Mobile-first platform for streamlined rental property management',
+  //   categoryLabel: 'Mobile App (Property Tech)', // e.g., "Mobile App", "Property Tech"
+  //   category: 'app',
+  //   client: 'Weblysoft LLC',
+  //   date: '2024',
+  //   url: '', // Add live link if applicable
+  //   coverImage: '/assets/img/portfolio/afrilease.png', // Optional: add a banner image
+  //   gallery: ['/assets/img/portfolio/afrilease.png'], // Optional: array of screenshots
+  //   description: `Afrilease is a dual mobile application ecosystem designed to modernize rental property operations. The platform enables tenants to manage their rental experience—paying rent and utility bills, submitting maintenance requests, accessing digital lease documents, and communicating directly with landlords. On the other side, landlords benefit from tools to monitor property status, manage technicians, assign property managers, review payment reports, and maintain direct contact with tenants via integrated messaging.`,
+  //   technologies: ['Ionic', 'Angular', 'Capacitor', 'SCSS'],
+  //   features: [
+  //     'Secure rent and utility payments through mobile interface',
+  //     'Real-time messaging between landlords and tenants',
+  //     'Maintenance request and technician assignment system',
+  //     'Digital lease document access and export',
+  //     'Role-based dashboards with real-time data synchronization'
+  //   ],
+  //   responsibilities: [
+  //     'Led the frontend development of both tenant and landlord applications using Ionic and Angular',
+  //     'Implemented responsive UI components and dynamic interactions tailored to distinct user roles',
+  //     'Integrated RESTful APIs for secure data handling and state synchronization',
+  //     'Collaborated with backend and design teams to ensure UX consistency across both applications'
+  //   ],
+  //   challenges: [
+  //     'Designing two seamless but distinct user experiences within a single platform',
+  //     'Maintaining real-time communication between users across different applications',
+  //     'Ensuring mobile performance across varied device types and screen sizes'
+  //   ],
+  //   solutions: [
+  //     'Adopted modular architecture with reusable UI components and role-specific logic',
+  //     'Integrated WebSocket services for real-time chat and event handling',
+  //     'Optimized rendering strategies and applied lazy-loading techniques to enhance mobile performance'
+  //   ],
+  //   sourceCodeLink: '', // Add a GitHub or Bitbucket link if shareable
+  //   rate: 1
+  // },
   {
     name: "Bantou Food",
     shortDescription: "A cultural African food recipe app with step-by-step instructions and geolocated restaurants.",
@@ -86,7 +86,6 @@ var projects = [
       "Used Capacitor plugins to enhance device compatibility for maps and phone calls",
       "Implemented caching and lazy loading to improve performance on mobile devices"
     ],
-    sourceCodeLink: "", // Add if open source
     rate: 1
   },
   {
@@ -96,7 +95,7 @@ var projects = [
     category: 'app',
     client: "Weblysoft LLC",
     date: "2024",
-    url: "", // ajouter l'URL si disponible
+    url: " ", // ajouter l'URL si disponible
     coverImage: "/assets/img/portfolio/moorcast.png", // ajouter une image de couverture si possible
     gallery: ["/assets/img/portfolio/moorcast.png", "/assets/img/portfolio/moorcast1.png", ""], // images supplémentaires si besoin
 
@@ -255,7 +254,7 @@ var projects = [
     categoryLabel: 'Mobile Application',
     category: 'app',
     client: 'Weblysoft LLC',
-    date: '', // à remplir si tu veux afficher la date de réalisation
+    date: '2023', // à remplir si tu veux afficher la date de réalisation
     url: 'https://moorradio.com', // à remplir si disponible
     coverImage: '/assets/img/portfolio/moorradio.png', // lien vers une image si tu en as une
     gallery: ['/assets/img/portfolio/moorradio.png', '/assets/img/portfolio/moorradio2.png'], // facultatif si tu veux une galerie
@@ -290,7 +289,7 @@ var projects = [
     categoryLabel: 'Mobile Application',
     category: 'app',
     client: 'Weblysoft LLC',
-    date: '', // facultatif
+    date: '2023', // facultatif
     url: 'https://quickdocta.com/', // facultatif
     coverImage: '/assets/img/portfolio/quickdocta.png', // lien image principale du projet
     gallery: ['/assets/img/portfolio/quickdocta.png', '/assets/img/portfolio/quickdocta2.png'], // images secondaires si disponible
@@ -330,7 +329,7 @@ var projects = [
     categoryLabel: 'Mobile Application',
     category: 'app',
     client: 'Sahream',
-    date: '', // Optionnel
+    date: '2025', // Optionnel
     url: '', // Si disponible
     coverImage: '/assets/img/portfolio/sahream.png', // Image principale du projet
     gallery: ['/assets/img/portfolio/sahream1.png', '/assets/img/portfolio/sahream2.png', '/assets/img/portfolio/sahream3.png'], // Liens vers d’autres images ou vidéos du projet
@@ -369,10 +368,10 @@ var projects = [
     categoryLabel: 'Mobile Application',
     category: 'app',
     client: 'Personnal Project',
-    date: '', // Optionnel
-    url: '', // Si disponible
-    coverImage: '/assets/img/portfolio/prepa-website (1).jpg', // Image principale du projet
-    gallery: ['/assets/img/portfolio/prepa (2).jpg', '/assets/img/portfolio/prepa (3).jpg', '/assets/img/portfolio/prepa (4).jpg', '/assets/img/portfolio/prepa (5).jpg'], // Images ou vidéos d’illustration
+    date: '2024', // Optionnel
+    url: ' ', // Si disponible
+    coverImage: '/assets/img/portfolio/prepa-website (1).png', // Image principale du projet
+    gallery: ['/assets/img/portfolio/prepa (2).png', '/assets/img/portfolio/prepa (3).png', '/assets/img/portfolio/prepa (4).png', '/assets/img/portfolio/prepa (5).png'], // Images ou vidéos d’illustration
     description: `Prepa is a mobile application designed to support students and candidates preparing for competitive entrance exams to training schools. The platform gives access to past exam papers, detailed solutions, an intelligent tutor chatbot, and an interactive calendar with official dates. Prepa empowers students with smart tools to help them study, revise, and plan their academic success efficiently.`,
     technologies: ['Ionic', 'Angular', 'Capacitor', 'ExpressJS', 'MongoDB'],
     features: [
@@ -422,7 +421,7 @@ var projects = [
     categoryLabel: 'Mobile Application',
     category: 'app',
     client: 'Aida',
-    date: '', // À compléter si nécessaire
+    date: '2024', // À compléter si nécessaire
     url: '', // Ajoute un lien si l’app est déployée
     coverImage: '/assets/img/portfolio/first-aid.png', // Lien vers une image principale du projet
     gallery: ['/assets/img/portfolio/first-aid.png', '/assets/img/portfolio/first-aid1.png', '/assets/img/portfolio/first-aid2.png'], // Images ou vidéos de démonstration
@@ -510,10 +509,10 @@ var projects = [
     categoryLabel: 'Website Development',
     category: 'branding',
     client: 'Weblysoft LLC',
-    date: '', // Ajoute la date si disponible
+    date: '2024', // Ajoute la date si disponible
     url: 'https://weblysoft.com/', // Lien vers le site en ligne, si accessible
-    coverImage: '/assets/img/portfolio/weblysoft-website (1).jpg', // Capture d’écran du site
-    gallery: ['/assets/img/portfolio/weblysoft-website (1).jpg', '/assets/img/portfolio/weblysoft-website (2).jpg', '/assets/img/portfolio/weblysoft-website (3).jpg', '/assets/img/portfolio/weblysoft-website (4).jpg', '/assets/img/portfolio/weblysoft-website (5).jpg', '/assets/img/portfolio/weblysoft-website (6).jpg', '/assets/img/portfolio/weblysoft-website (7).jpg', '/assets/img/portfolio/weblysoft-website (8).jpg', '/assets/img/portfolio/weblysoft-website (9).jpg', '/assets/img/portfolio/weblysoft-website (10).jpg', '/assets/img/portfolio/weblysoft-website (11).jpg'], // Screenshots ou pages clés
+    coverImage: '/assets/img/portfolio/weblysoft-website (1).png', // Capture d’écran du site
+    gallery: ['/assets/img/portfolio/weblysoft-website (1).png', '/assets/img/portfolio/weblysoft-website (2).png', '/assets/img/portfolio/weblysoft-website (3).png', '/assets/img/portfolio/weblysoft-website (4).png', '/assets/img/portfolio/weblysoft-website (5).png', '/assets/img/portfolio/weblysoft-website (6).png', '/assets/img/portfolio/weblysoft-website (7).png', '/assets/img/portfolio/weblysoft-website (8).png', '/assets/img/portfolio/weblysoft-website (9).png', '/assets/img/portfolio/weblysoft-website (10).png', '/assets/img/portfolio/weblysoft-website (11).png'], // Screenshots ou pages clés
     description: `The Weblysoft website is a modern, responsive showcase platform designed to reflect the identity, values, and services of Weblysoft LLC — a technology company specializing in software solutions. The website introduces the company’s mission, its core services, product offerings, client testimonials, and its dedicated team. Its goal is to reinforce the company’s online presence and support business development efforts.`,
     technologies: ['HTML5', 'CSS3', 'TailwindCSS', 'JavaScript', 'AOS.js'],
     features: [
@@ -550,10 +549,10 @@ var projects = [
     categoryLabel: 'Website Development',
     category: 'branding',
     client: 'Weblysoft LLC',
-    date: '', // Ajouter la date si connue
+    date: '2025', // Ajouter la date si connue
     url: 'https://cedigrovepartners.com/', // URL du site si disponible
-    coverImage: '/assets/img/portfolio/cedi-grove (1).jpg', // Capture d’écran principale
-    gallery: ['/assets/img/portfolio/cedi-grove (1).jpg', '/assets/img/portfolio/cedi-grove (2).jpg', '/assets/img/portfolio/cedi-grove (3).jpg', '/assets/img/portfolio/cedi-grove (4).jpg', '/assets/img/portfolio/cedi-grove (5).jpg'], // Screenshots secondaires
+    coverImage: '/assets/img/portfolio/cedi-grove (1).png', // Capture d’écran principale
+    gallery: ['/assets/img/portfolio/cedi-grove (1).png', '/assets/img/portfolio/cedi-grove (2).png', '/assets/img/portfolio/cedi-grove (3).png', '/assets/img/portfolio/cedi-grove (4).png', '/assets/img/portfolio/cedi-grove (5).png'], // Screenshots secondaires
     description: `Cedi Grove Partners is a cybersecurity and career development firm. Their corporate website serves as a central hub for showcasing their capabilities in cybersecurity strategy, RMF compliance, software development, and data analytics. It also includes matchmaking tools and resources for employers and job seekers, offering recruitment, coaching, and application optimization services.`,
     technologies: ['HTML5', 'CSS3', 'TailwindCSS', 'JavaScript', 'AOS.js'],
     features: [
@@ -591,9 +590,9 @@ var projects = [
     categoryLabel: 'Website Development',
     category: 'branding',
     client: 'Weblysoft LLC',
-    date: '', // à compléter
+    date: '2025', // à compléter
     url: 'https://dietchconsulting.us', // à compléter si disponible
-    coverImage: '/assets/img/portfolio/dietchconsulting.png', // à compléter avec une capture
+    coverImage: '/assets/img/portfolio/dietchconsulting.jpg', // à compléter avec une capture
     gallery: ['/assets/img/portfolio/dietchconsulting.png'], // captures secondaires
     description: `Dietch Consulting is a trilingual marriage and family counseling service offering support in English, French, and Spanish. Their mission is to reduce divorce rates, address social consequences of family breakdown, and improve intra-family communication. The website provides key information about their methodology—training, counseling, and long-term monitoring—while offering appointment booking capabilities.`,
     technologies: ['HTML5', 'CSS3', 'TailwindCSS', 'JavaScript', 'AOS.js'],
@@ -631,7 +630,7 @@ var projects = [
     categoryLabel: 'Website Development',
     category: 'branding',
     client: 'Weblysoft LLC',
-    date: '', // à compléter
+    date: '2025', // à compléter
     url: 'https://www.easy-integration.com', // à compléter si en ligne
     coverImage: '/assets/img/portfolio/easyintegrationproject.png', // capture principale
     gallery: ['/assets/img/portfolio/easyintegrationproject.png'], // captures secondaires
@@ -673,7 +672,7 @@ var projects = [
     categoryLabel: 'Website Development',
     category: 'branding',
     client: 'Weblysoft LLC',
-    date: '', // À compléter (ex: 'April 2024')
+    date: '2025', // À compléter (ex: 'April 2024')
     url: 'https://editeurpa.com', // Lien du site s'il est en ligne
     coverImage: '/assets/img/portfolio/ankhproject.png', // URL vers une capture d'écran principale
     gallery: ['/assets/img/portfolio/ankhproject.png'], // Captures supplémentaires
@@ -713,7 +712,7 @@ var projects = [
     categoryLabel: 'Website Development',
     category: 'branding',
     client: 'Weblysoft LLC',
-    date: '', // À compléter (ex: 'June 2024')
+    date: '2025', // À compléter (ex: 'June 2024')
     url: 'https://swconseils.com', // À compléter (ex: 'https://sawk-advices.com')
     coverImage: '/assets/img/portfolio/swconseilsproject.png', // Capture principale
     gallery: ['/assets/img/portfolio/swconseilsproject.png'], // Captures supplémentaires du site
@@ -753,10 +752,10 @@ var projects = [
     categoryLabel: 'Website Development',
     category: 'branding',
     client: 'Weblysoft LLC',
-    date: '', // Exemple : 'May 2024'
+    date: '2025', // Exemple : 'May 2024'
     url: 'https://trsproperties.net/', // Exemple : 'https://trs-properties.com'
-    coverImage: '/assets/img/portfolio/trs (1).jpg', // Capture principale du site
-    gallery: ['/assets/img/portfolio/trs (1).jpg', '/assets/img/portfolio/trs (2).jpg', '/assets/img/portfolio/trs (3).jpg', '/assets/img/portfolio/trs (4).jpg', '/assets/img/portfolio/trs (5).jpg'], // Captures supplémentaires
+    coverImage: '/assets/img/portfolio/trs (1).png', // Capture principale du site
+    gallery: ['/assets/img/portfolio/trs (1).png', '/assets/img/portfolio/trs (2).png', '/assets/img/portfolio/trs (3).png', '/assets/img/portfolio/trs (4).png', '/assets/img/portfolio/trs (5).png'], // Captures supplémentaires
     description: `TRS Properties is a real estate company website designed to present a broad range of property listings including land plots, residential buildings, and investment opportunities. Built with modern web technologies, the platform highlights key listings, presents company values, and provides users with intuitive access to property details and contact features.`,
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'TailwindCSS', 'AOS.js'],
     features: [
@@ -793,10 +792,10 @@ var projects = [
     categoryLabel: 'Website Development',
     category: 'branding',
     client: 'Personnal Project',
-    date: '', // Exemple : 'June 2024'
-    url: '', // Exemple : 'https://prepa-app.com'
-    coverImage: '/assets/img/portfolio/prepa-website (1).jpg', // Capture du site principal
-    gallery: ['/assets/img/portfolio/prepa-website (1).jpg', '/assets/img/portfolio/prepa-website (2).jpg', '/assets/img/portfolio/prepa-website (3).jpg'], // Autres captures si disponibles
+    date: '2024', // Exemple : 'June 2024'
+    url: 'https://prepa-iota.vercel.app', // Exemple : 'https://prepa-app.com'
+    coverImage: '/assets/img/portfolio/prepa-website (1).png', // Capture du site principal
+    gallery: ['/assets/img/portfolio/prepa-website (1).png', '/assets/img/portfolio/prepa-website (2).png', '/assets/img/portfolio/prepa-website (3).png'], // Autres captures si disponibles
     description: `The Prepa website was developed to serve as the official landing page for the Prepa mobile application, which provides access to past entrance exam papers and solutions for students. The site had to be built quickly and efficiently to support an urgent pitch presentation. It presents key features, benefits, and access points to the app in a clear and attractive manner.`,
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'AOS.js'],
     features: [
@@ -910,10 +909,10 @@ var projects = [
     categoryLabel: 'Website & SaaS Platform',
     category: 'branding',
     client: 'Personnal Project',
-    date: '', // préciser la date ou période
+    date: '2025', // préciser la date ou période
     url: 'https://kwarata-app.vercel.app', // lien vers site web si disponible
-    coverImage: '/assets/img/portfolio/kwarata-website (1).jpg', // image principale du site ou logo
-    gallery: ['/assets/img/portfolio/kwarata-website (1).jpg', '/assets/img/portfolio/kwarata-website (2).jpg', '/assets/img/portfolio/kwarata-website (3).jpg'], // captures d’écran, vidéos, etc.
+    coverImage: '/assets/img/portfolio/kwarata-website (1).png', // image principale du site ou logo
+    gallery: ['/assets/img/portfolio/kwarata-website (1).png', '/assets/img/portfolio/kwarata-website (2).png', '/assets/img/portfolio/kwarata-website (3).png'], // captures d’écran, vidéos, etc.
     description: `Kwarata is an African-built unified endpoint management solution designed to address the unique IT security challenges of African enterprises. It offers centralized control of multi-platform devices, strong policy enforcement, remote management, and advanced monitoring with AI-powered predictive maintenance.`,
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'AOS.js'],
     features: [
@@ -959,9 +958,10 @@ var projects = [
     category: 'product',
     client: 'Personnal Project',
     status: 'In Development',
-    coverImage: '/assets/img/portfolio/kwarata.png',
+    coverImage: '/assets/img/portfolio/kwarata2.png',
+    date: '2025', // Date de début ou de fin du projet
     url: 'https://kwarata.vercel.app', // Lien vers la démo ou le site
-    gallery: ['/assets/img/portfolio/kwarata (1).jpg', '/assets/img/portfolio/kwarata (2).jpg', '/assets/img/portfolio/kwarata (3).jpg', '/assets/img/portfolio/kwarata (4).jpg', '/assets/img/portfolio/kwarata (5).jpg', '/assets/img/portfolio/kwarata (6).jpg', '/assets/img/portfolio/kwarata (7).jpg', '/assets/img/portfolio/kwarata (8).jpg', '/assets/img/portfolio/kwarata (9).jpg', '/assets/img/portfolio/kwarata (10).jpg'],
+    gallery: ['/assets/img/portfolio/kwarata (1).png', '/assets/img/portfolio/kwarata (2).png', '/assets/img/portfolio/kwarata (3).png', '/assets/img/portfolio/kwarata (4).png', '/assets/img/portfolio/kwarata (5).png', '/assets/img/portfolio/kwarata (6).png', '/assets/img/portfolio/kwarata (7).png', '/assets/img/portfolio/kwarata (8).png', '/assets/img/portfolio/kwarata (9).png', '/assets/img/portfolio/kwarata (10).png'],
     description: `Kwarata is a cutting-edge UEM platform designed to empower African enterprises with centralized, adaptive, and secure management of diverse device fleets. Built on a robust microservices architecture, it addresses unique regional challenges while providing scalable, reliable, and extensible IT infrastructure management.`,
     technologies: [
       'Angular',
@@ -1026,7 +1026,7 @@ var projects = [
     categoryLabel: 'Web Application (ERP)',
     category: 'product',
     client: 'Fleuva',
-    date: '', // optional: you can specify a timeline like '2024'
+    date: '2024-2025', // optional: you can specify a timeline like '2024'
     url: 'https://www.fleuva.com/', // optional: link to a demo or live app
     coverImage: '/assets/img/portfolio/fleuva.jpg', // optional: screenshot or visual preview
     gallery: ['/assets/img/portfolio/fleuva.jpg', '/assets/img/portfolio/fleuva1.webp', '/assets/img/portfolio/fleuva2.webp', '/assets/img/portfolio/fleuva3.webp', '/assets/img/portfolio/fleuva4.webp'],
@@ -1069,6 +1069,7 @@ var projects = [
     categoryLabel: 'Web Application (Admin Panel)',
     category: 'product',
     client: '(JCS) Jethro\'s Computing Services',
+    date: '2024',
     coverImage: '/assets/img/portfolio/jcs.png',
     gallery: ['/assets/img/portfolio/jcs.png'],
     technologies: ['Angular', 'SCSS', 'Angular Material', 'REST APIs'],
@@ -1155,7 +1156,36 @@ function createProjectsList(projects){
 function renderProjects(){
   const elt = document.getElementById("isotope-container");
   if(elt) elt.innerHTML = createProjectsList(projects)
+
+  reinitializeIsotope();
 }
+
+function reinitializeIsotope() {
+  const container = document.querySelector('.isotope-container');
+
+  // Wait for all images to load before initializing Isotope
+  imagesLoaded(container, function () {
+    // Initialize Isotope with masonry layout
+    const iso = new Isotope(container, {
+      itemSelector: '.isotope-item',
+      layoutMode: 'masonry'
+    });
+
+    // Filter click handling
+    document.querySelectorAll('.portfolio-filters li').forEach(el => {
+      el.addEventListener('click', function () {
+        document.querySelector('#portfolio-filters .filter-active')?.classList.remove('filter-active');
+        this.classList.add('filter-active');
+        const filterValue = this.getAttribute('data-filter');
+        iso.arrange({ filter: filterValue });
+      });
+    });
+
+    // Re-initialize GLightbox
+    GLightbox({ selector: '.glightbox' });
+  });
+}
+
 
 document.addEventListener("DOMContentLoaded", function() {
   renderProjects();

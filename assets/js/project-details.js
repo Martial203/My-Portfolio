@@ -45,8 +45,10 @@ function renderProject(index) {
         <li><strong>Category</strong> ${p.categoryLabel}</li>
         <li><strong>Client</strong> ${p.client}</li>
         <li><strong>Project date</strong> ${p.date}</li>
-        <li><strong>Project URL</strong> <a href="${p.url}" target="_blank">${p.url}</a></li>
-        <li><a href="${p.url}" class="btn-visit align-self-start" target="_blank">Visit Website</a></li>
+        ${p.url.length > 0 ? `
+          <li><strong>Project URL</strong> <a href="${p.url}" target="_blank">${p.url}</a></li>
+          <li><a href="${p.url}" class="btn-visit align-self-start" target="_blank">Visit Website</a></li>
+        ` : ``}
       </ul>
     </div>
   `;
