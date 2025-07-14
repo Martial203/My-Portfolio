@@ -1145,9 +1145,15 @@ function createProjectsList(projects){
       <img src="${p.coverImage}" class="img-fluid" alt="${p.name}">
       <div class="portfolio-info">
         <h4>${p.name}</h4>
-        <p>${p.shortDescription}</p>
-        <a href="${p.coverImage}" title="${p.name}" data-gallery="portfolio-gallery-${p.category}" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-        <a href="portfolio-details.html?project=${index}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+        <p class="pr-5">${p.shortDescription}</p>
+        <div class="portfolio-actions" style="display: flex; gap: 12px; align-items: center; margin-top: 8px;">
+          <a href="${p.coverImage}" title="${p.name}" data-gallery="portfolio-gallery-${p.category}" class="glightbox preview-link" style="display: flex; align-items: center; justify-content: center;">
+            <i class="bi bi-zoom-in" style="font-size: 1.5rem;"></i>
+          </a>
+          <a href="portfolio-details.html?project=${index}" title="More Details" class="details-link" style="display: flex; align-items: center; justify-content: center;">
+            <i class="bi bi-info-circle" style="font-size: 1.5rem; width: 16px; position: relative; top: 0px; right: 4px;"></i>
+          </a>
+        </div>
       </div>
     </div>
   `).join("")}`;
