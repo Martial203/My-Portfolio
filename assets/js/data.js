@@ -509,7 +509,7 @@ var projects = [
     client: 'Sahream',
     date: '2025', // Optionnel
     url: '', // Si disponible
-    coverImage: '/assets/img/portfolio/sahream.png', // Image principale du projet
+    coverImage: '/assets/img/portfolio/sahream1.png', // Image principale du projet
     gallery: ['/assets/img/portfolio/sahream1.png', '/assets/img/portfolio/sahream2.png', '/assets/img/portfolio/sahream3.png'], // Liens vers d’autres images ou vidéos du projet
     description: `Sahream is a dual-application mobile platform designed to streamline the student housing experience in African cities. One app targets students, enabling them to search, view, and book available rooms with complete transparency. The other app is tailored for landlords to manage listings, track tenant activity, and monitor payments in real time.`,
     technologies: ['Ionic', 'Angular', 'Capacitor', 'Google Maps SDK'],
@@ -548,7 +548,7 @@ var projects = [
     client: 'Personnal Project',
     date: '2024', // Optionnel
     url: ' ', // Si disponible
-    coverImage: '/assets/img/portfolio/prepa-website (1).png', // Image principale du projet
+    coverImage: '/assets/img/portfolio/prepa (2).png', // Image principale du projet
     gallery: ['/assets/img/portfolio/prepa (2).png', '/assets/img/portfolio/prepa (3).png', '/assets/img/portfolio/prepa (4).png', '/assets/img/portfolio/prepa (5).png'], // Images ou vidéos d’illustration
     description: `Prepa is a mobile application designed to support students and candidates preparing for competitive entrance exams to training schools. The platform gives access to past exam papers, detailed solutions, an intelligent tutor chatbot, and an interactive calendar with official dates. Prepa empowers students with smart tools to help them study, revise, and plan their academic success efficiently.`,
     technologies: ['Ionic', 'Angular', 'Capacitor', 'ExpressJS', 'MongoDB'],
@@ -1249,6 +1249,7 @@ var projects = [
     client: '(JCS) Jethro\'s Computing Services',
     date: '2024',
     coverImage: '/assets/img/portfolio/jcs.png',
+    coverFit: 'contain',
     gallery: ['/assets/img/portfolio/jcs.png'],
     technologies: ['Angular', 'SCSS', 'Angular Material', 'REST APIs'],
     description: `JCS (Jethro's Computing Services) required a powerful and user-friendly web-based administration platform to manage their website content and monitor user activity. This included a secure dashboard for content updates, user interactions, and web traffic analytics. The goal was to provide the JCS team with full visibility and control over their online platform through an elegant, responsive, and intuitive interface.`,
@@ -1284,7 +1285,7 @@ var projects = [
     categoryLabel: 'Web Application (Service Marketplace)',
     category: 'product',
     client: 'YETI',
-    coverImage: '/assets/img/portfolio/menagerponctuel.png',
+    coverImage: '/assets/img/portfolio/menager-ponctuel (1).png',
     gallery: ['/assets/img/portfolio/menager-ponctuel (1).png', '/assets/img/portfolio/menager-ponctuel (2).png', '/assets/img/portfolio/menager-ponctuel (3).png', '/assets/img/portfolio/menager-ponctuel (4).png', '/assets/img/portfolio/menager-ponctuel (5).png', '/assets/img/portfolio/menager-ponctuel (6).png', '/assets/img/portfolio/menager-ponctuel (7).png', '/assets/img/portfolio/menager-ponctuel (8).png'],
     technologies: ['Angular', 'TailwindCSS', 'Angular Material'],
     description: `Ménager Ponctuel is a web-based platform that enables users to easily find and contact local household service providers such as electricians, plumbers, and handymen. At the same time, professionals can register as service providers, manage their availability, and receive job requests in exchange for payment. The platform was designed to streamline the search, booking, and communication process for both clients and workers.`,
@@ -1317,60 +1318,67 @@ var projects = [
 
 ]
 
+// Translation helpers (I18N comes from i18n.js, French project texts from data.fr.js)
+function tr(key, fallback) {
+  return window.I18N ? I18N.t(key) : fallback;
+}
+
+// Project with its fields localized to the active language (English is the fallback)
+function localizedProject(p) {
+  const lang = window.I18N ? I18N.lang : 'en';
+  if (lang === 'fr' && typeof projectsFr !== 'undefined' && projectsFr[p.name]) {
+    return { ...p, ...projectsFr[p.name] };
+  }
+  return p;
+}
+
+function categoryName(p) {
+  return tr(`cat.${p.category}`, p.categoryLabel) || p.categoryLabel;
+}
+
+// Lightweight WebP thumbnail generated for each cover (SVG covers are used as is)
+function thumbnailOf(cover) {
+  const path = cover.replace(/^\//, '');
+  if (path.endsWith('.svg')) return encodeURI(path);
+  const file = path.split('/').pop().replace(/\.[^.]+$/, '.webp');
+  return encodeURI(`assets/img/portfolio/thumbs/${file}`);
+}
+
 function createProjectsList(projects){
-  return `${projects.map((p, index) => `
-    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-${p.category}">
-      <img src="${p.coverImage}" class="img-fluid" alt="${p.name}">
-      <div class="portfolio-info">
-        <h4>${p.name}</h4>
-        <p class="pr-5">${p.shortDescription}</p>
-        <div class="portfolio-actions" style="display: flex; gap: 12px; align-items: center; margin-top: 8px;">
-          <a href="${p.coverImage}" title="${p.name}" data-gallery="portfolio-gallery-${p.category}" class="glightbox preview-link" style="display: flex; align-items: center; justify-content: center;">
-            <i class="bi bi-zoom-in" style="font-size: 1.5rem;"></i>
-          </a>
-          <a href="portfolio-details.html?project=${index}" title="More Details" class="details-link" style="display: flex; align-items: center; justify-content: center;">
-            <i class="bi bi-info-circle" style="font-size: 1.5rem; width: 16px; position: relative; top: 0px; right: 4px;"></i>
-          </a>
+  return projects.map((project, index) => {
+    const p = localizedProject(project);
+    return `
+    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-${p.category}" data-index="${index}">
+      <a class="portfolio-card" href="portfolio-details.html?project=${index}" aria-label="${p.name}: ${tr('card.aria', 'view project details')}">
+        <div class="portfolio-media${p.coverFit === 'contain' ? ' is-contain' : ''}">
+          <img src="${thumbnailOf(p.coverImage)}" alt="${p.name}" loading="lazy" decoding="async">
         </div>
-      </div>
+        <div class="portfolio-body">
+          <span class="portfolio-tag">${categoryName(p)}</span>
+          <h4>${p.name}</h4>
+          <p class="portfolio-summary">${p.shortDescription}</p>
+          <span class="portfolio-more">${tr('card.more', 'View project')} <i class="bi bi-arrow-right"></i></span>
+        </div>
+      </a>
     </div>
-  `).join("")}`;
+  `;
+  }).join("");
 }
 
-function renderProjects(){
+// Rendered synchronously so main.js can initialize Isotope on the populated grid
+(function renderProjects() {
   const elt = document.getElementById("isotope-container");
-  if(elt) elt.innerHTML = createProjectsList(projects)
+  if (!elt) return;
+  elt.innerHTML = createProjectsList(projects);
 
-  reinitializeIsotope();
-}
-
-function reinitializeIsotope() {
-  const container = document.querySelector('.isotope-container');
-
-  // Wait for all images to load before initializing Isotope
-  imagesLoaded(container, function () {
-    // Initialize Isotope with masonry layout
-    const iso = new Isotope(container, {
-      itemSelector: '.isotope-item',
-      layoutMode: 'masonry'
+  // On language change, update the card texts in place so the Isotope layout stays intact
+  document.addEventListener('languagechange', () => {
+    elt.querySelectorAll('.portfolio-item').forEach(item => {
+      const p = localizedProject(projects[item.dataset.index]);
+      item.querySelector('.portfolio-card').setAttribute('aria-label', `${p.name}: ${tr('card.aria', 'view project details')}`);
+      item.querySelector('.portfolio-tag').textContent = categoryName(p);
+      item.querySelector('.portfolio-summary').textContent = p.shortDescription;
+      item.querySelector('.portfolio-more').innerHTML = `${tr('card.more', 'View project')} <i class="bi bi-arrow-right"></i>`;
     });
-
-    // Filter click handling
-    document.querySelectorAll('.portfolio-filters li').forEach(el => {
-      el.addEventListener('click', function () {
-        document.querySelector('#portfolio-filters .filter-active')?.classList.remove('filter-active');
-        this.classList.add('filter-active');
-        const filterValue = this.getAttribute('data-filter');
-        iso.arrange({ filter: filterValue });
-      });
-    });
-
-    // Re-initialize GLightbox
-    GLightbox({ selector: '.glightbox' });
   });
-}
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  renderProjects();
-});
+})();

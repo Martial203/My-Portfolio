@@ -20,8 +20,10 @@
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #45505b; /* Color for headings, subheadings and title throughout the website */
+  --default-color: #2b2f36; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #14213d; /* Color for headings, subheadings and title throughout the website */
+  --brand-dark: #0b1324; /* Deep navy used for dark, high-contrast surfaces (hero) */
+  --brand-highlight: #4cc3ff; /* Bright accent readable on dark surfaces */
   --accent-color: #0563bb; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -45,10 +47,10 @@
 }
 
 .dark-background {
-  --background-color: #060606;
+  --background-color: #0b1324;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #252525;
+  --surface-color: #16213a;
   --contrast-color: #ffffff;
 }
 
@@ -519,10 +521,10 @@ section,
   width: 100%;
   min-height: 100vh;
   position: relative;
-  padding: 80px 0;
+  padding: 100px 0 80px 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
 .hero img {
@@ -535,9 +537,10 @@ section,
   z-index: 1;
 }
 
+/* Dark gradient overlay: keeps the photo as texture while guaranteeing text contrast */
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: linear-gradient(100deg, rgba(11, 19, 36, 0.96) 0%, rgba(11, 19, 36, 0.88) 45%, rgba(11, 19, 36, 0.6) 100%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -548,46 +551,168 @@ section,
   z-index: 3;
 }
 
-.hero h2 {
+.hero .hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--nav-font);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+}
+
+.hero .status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+}
+
+.hero h1 {
   margin: 0;
-  font-size: 64px;
+  font-size: 68px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.hero .hero-role {
+  margin: 16px 0 0 0;
+  font-family: var(--heading-font);
+  font-size: 28px;
   font-weight: 700;
+  color: #ffffff;
 }
 
-.hero p {
-  margin: 5px 0 0 0;
-  font-size: 26px;
+.hero .text-accent {
+  color: var(--brand-highlight);
 }
 
-.hero p span {
-  letter-spacing: 1px;
-  border-bottom: 2px solid var(--accent-color);
+.hero .hero-typed {
+  margin: 14px 0 0 0;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.75);
+  min-height: 30px;
+}
+
+.hero .hero-typed .typed {
+  color: #ffffff;
+  border-bottom: 2px solid var(--brand-highlight);
+}
+
+.hero .typed-cursor {
+  color: var(--brand-highlight);
+}
+
+.hero .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.hero .btn-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--nav-font);
+  font-weight: 500;
+  font-size: 16px;
+  padding: 13px 28px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.hero .btn-hero-primary {
+  background: var(--accent-color);
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(5, 99, 187, 0.35);
+}
+
+.hero .btn-hero-primary:hover {
+  background: #0a74d6;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.hero .btn-hero-ghost {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.hero .btn-hero-ghost:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .hero .social-links {
-  margin-top: 25px;
+  margin-top: 36px;
 }
 
 .hero .social-links a {
   font-size: 20px;
   display: inline-block;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: rgba(255, 255, 255, 0.65);
   line-height: 1;
-  margin-right: 20px;
+  margin-right: 22px;
   transition: 0.3s;
 }
 
 .hero .social-links a:hover {
-  color: var(--accent-color);
+  color: var(--brand-highlight);
+}
+
+.hero .scroll-hint {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 24px;
+  animation: hero-bounce 2s infinite;
+}
+
+@keyframes hero-bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .scroll-hint {
+    animation: none;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero h2 {
-    font-size: 32px;
+  .hero {
+    padding-top: 90px;
   }
 
-  .hero p {
-    font-size: 20px;
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero .hero-role {
+    font-size: 21px;
+  }
+
+  .hero .hero-typed {
+    font-size: 17px;
+    min-height: 52px;
+  }
+
+  .hero .btn-hero {
+    padding: 12px 22px;
+    font-size: 15px;
   }
 }
 
@@ -716,20 +841,22 @@ section,
 }
 
 .resume .resume-item h4 {
-  line-height: 18px;
+  line-height: 1.35;
   font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-weight: 700;
+  color: var(--heading-color);
   margin-bottom: 10px;
 }
 
 .resume .resume-item h5 {
-  font-size: 16px;
-  padding: 5px 15px;
+  font-size: 14px;
+  padding: 4px 12px;
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  border-radius: 50px;
 }
 
 .resume .resume-item ul {
@@ -1553,4 +1680,341 @@ section,
 }
 .stats .stats-item span.stats-plus::after {
   content: "+";
+}
+
+/*--------------------------------------------------------------
+# Brand refresh: About, Skills, Portfolio, Trusted By, Contact
+--------------------------------------------------------------*/
+.section-title p {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About */
+.about .about-photo img {
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(11, 19, 36, 0.18);
+}
+
+.about .content ul a {
+  color: var(--default-color);
+}
+
+.about .content ul a:hover {
+  color: var(--accent-color);
+}
+
+.btn-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--nav-font);
+  font-weight: 500;
+  padding: 11px 26px;
+  border-radius: 50px;
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  transition: 0.3s;
+}
+
+.btn-inline:hover {
+  color: var(--contrast-color);
+  background: #0a74d6;
+}
+
+/* Skills: grouped chips instead of percentage bars */
+.skills .skill-group {
+  height: 100%;
+  padding: 28px;
+  border-radius: 12px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  transition: 0.3s;
+}
+
+.skills .skill-group:hover {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+  box-shadow: 0 12px 30px rgba(11, 19, 36, 0.08);
+}
+
+.skills .skill-group.is-security {
+  border-top: 3px solid var(--accent-color);
+}
+
+.skills .skill-group-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.skills .skill-group-header i {
+  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+}
+
+.skills .skill-group-header h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.skills .skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills .skill-chips li {
+  font-size: 14px;
+  padding: 6px 13px;
+  border-radius: 50px;
+  color: var(--heading-color);
+  background: color-mix(in srgb, var(--default-color), transparent 94%);
+}
+
+.skills .is-security .skill-chips li {
+  color: #064a8c;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+}
+
+/* Portfolio: uniform cards with always-visible titles (no hover needed on touch screens) */
+.portfolio .portfolio-item {
+  overflow: visible;
+}
+
+.portfolio .portfolio-card {
+  display: block;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  color: var(--default-color);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio .portfolio-card:hover,
+.portfolio .portfolio-card:focus-visible {
+  color: var(--default-color);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(11, 19, 36, 0.12);
+}
+
+.portfolio .portfolio-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f1f4f9;
+}
+
+.portfolio .portfolio-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.portfolio .portfolio-media.is-contain {
+  background: #ffffff;
+}
+
+.portfolio .portfolio-media.is-contain img {
+  object-fit: contain;
+  padding: 12%;
+}
+
+.portfolio .portfolio-card:hover .portfolio-media img {
+  transform: scale(1.04);
+}
+
+.portfolio .portfolio-body {
+  padding: 18px 20px 20px;
+}
+
+.portfolio .portfolio-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 6px;
+}
+
+.portfolio .portfolio-body h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.portfolio .portfolio-body p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin: 0 0 12px 0;
+}
+
+.portfolio .portfolio-more {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-more i {
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.portfolio .portfolio-card:hover .portfolio-more i {
+  transform: translateX(4px);
+}
+
+.portfolio .portfolio-show-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--nav-font);
+  font-weight: 500;
+  font-size: 15px;
+  padding: 11px 28px;
+  border-radius: 50px;
+  color: var(--accent-color);
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-show-more:hover {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
+.portfolio .portfolio-show-more[hidden] {
+  display: none;
+}
+
+/* Trusted By: full-colour logos, with a subtle lift on hover */
+.testimonials .testimonial-item img {
+  max-height: 64px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.testimonials .testimonial-item img:hover {
+  transform: scale(1.06);
+}
+
+/* Contact */
+.contact .info-item a {
+  color: var(--default-color);
+}
+
+.contact .info-item a:hover {
+  color: var(--accent-color);
+}
+
+.contact .php-email-form select {
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 0;
+  color: var(--default-color);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form select:invalid {
+  color: color-mix(in srgb, var(--default-color), transparent 55%);
+}
+
+.contact .php-email-form button[type=submit] {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 34px;
+  font-family: var(--nav-font);
+  font-weight: 500;
+}
+
+.contact .php-email-form .form-note {
+  font-size: 13px;
+  margin: 10px 0 0 0;
+  color: color-mix(in srgb, var(--default-color), transparent 45%);
+}
+
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible,
+.portfolio-filters li:focus-visible {
+  outline: 2px solid var(--brand-highlight);
+  outline-offset: 3px;
+}
+
+/* Academic honors highlighted in the Resume */
+.resume .resume-honor {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #8a5a00;
+  background: #fff4d6;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+/*--------------------------------------------------------------
+# Language switcher
+--------------------------------------------------------------*/
+.lang-switch {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9998;
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 16px rgba(11, 19, 36, 0.15);
+  backdrop-filter: blur(6px);
+}
+
+.lang-switch button {
+  border: 0;
+  background: transparent;
+  color: var(--heading-color);
+  font-family: var(--nav-font);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: 38px;
+  height: 34px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lang-switch button:hover {
+  color: var(--accent-color);
+}
+
+.lang-switch button.active {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
+/* Below 1200px the mobile menu toggle sits in the top-right corner */
+@media (max-width: 1199px) {
+  .lang-switch {
+    right: 65px;
+  }
 }

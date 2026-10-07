@@ -93,39 +93,30 @@
    * Init typed.js
    */
   const selectTyped = document.querySelector('.typed');
-  if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
-    new Typed('.typed', {
-      strings: typed_strings,
+  let typedInstance = null;
+
+  function initTyped() {
+    if (!selectTyped) return;
+    if (typedInstance) typedInstance.destroy();
+    const typed_strings = selectTyped.getAttribute('data-typed-items').split(',');
+    typedInstance = new Typed('.typed', {
+      strings: typed_strings.map(item => item.trim()),
       loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
+      typeSpeed: 60,
+      backSpeed: 30,
+      backDelay: 2200
     });
   }
+  initTyped();
+  // i18n.js swaps data-typed-items when the language changes
+  document.addEventListener('languagechange', initTyped);
 
   /**
    * Initiate Pure Counter
    */
-  new PureCounter();
-
-  /**
-   * Animate the skills items on reveal
-   */
-  let skillsAnimation = document.querySelectorAll('.skills-animation');
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
-    });
-  });
+  if (typeof PureCounter === 'function' && document.querySelector('.purecounter')) {
+    new PureCounter();
+  }
 
   /**
    * Initiate glightbox
@@ -142,23 +133,64 @@
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
+    // Cards have a fixed media aspect ratio, so the layout does not depend on
+    // (lazy-loaded) images and Isotope can start right away
+    const container = isotopeItem.querySelector('.isotope-container');
+    let initIsotope = new Isotope(container, {
+      itemSelector: '.isotope-item',
+      layoutMode: layout,
+      filter: filter,
+      sortBy: sort
     });
+    window.addEventListener('load', () => initIsotope.layout());
+
+    // "Show more": only the first projects of the active filter are displayed until expanded
+    const showMoreBtn = isotopeItem.querySelector('.portfolio-show-more');
+    let activeFilter = filter;
+    let expanded = false;
+    const visibleLimit = () => window.innerWidth < 768 ? 6 : 9;
+
+    function applyFilter() {
+      let matched = 0;
+      container.querySelectorAll('.isotope-item').forEach(el => {
+        const matches = activeFilter === '*' || el.matches(activeFilter);
+        if (matches) matched++;
+        el.dataset.show = matches && (expanded || matched <= visibleLimit()) ? '1' : '0';
+      });
+      initIsotope.arrange({ filter: '[data-show="1"]' });
+      if (showMoreBtn) {
+        const hidden = matched - visibleLimit();
+        showMoreBtn.hidden = expanded || hidden <= 0;
+        showMoreBtn.querySelector('.count').textContent = hidden;
+      }
+    }
+
+    if (showMoreBtn) {
+      showMoreBtn.addEventListener('click', () => {
+        expanded = true;
+        applyFilter();
+      });
+    }
+    applyFilter();
+    // Translated texts change card heights and reset the button label: lay out again
+    document.addEventListener('languagechange', applyFilter);
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
+      // Make filters reachable and usable from the keyboard
+      filters.setAttribute('tabindex', '0');
+      filters.setAttribute('role', 'button');
+      filters.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
       filters.addEventListener('click', function() {
         isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
+        activeFilter = this.getAttribute('data-filter');
+        expanded = false;
+        applyFilter();
         if (typeof aosInit === 'function') {
           aosInit();
         }
