@@ -682,6 +682,46 @@ var projects = [
   //   rate: 1
   // },
   {
+    name: 'MN-DEV Portfolio',
+    shortDescription: 'This very website: a bilingual, performance-optimized personal portfolio with Google Analytics',
+    categoryLabel: 'Website (Personal Portfolio)',
+    category: 'branding',
+    client: 'Personal project',
+    date: '2025-2026',
+    url: 'https://m-dev-psi.vercel.app',
+    coverImage: '/assets/img/portfolio/portfolio-site-1.png',
+    gallery: ['/assets/img/portfolio/portfolio-site-1.png', '/assets/img/portfolio/my-portfolio-profile.png', '/assets/img/portfolio/my-portfolio-projects.png', '/assets/img/portfolio/portfolio-site-2.png'],
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Isotope', 'Swiper', 'AOS.js', 'Typed.js', 'Google Analytics 4', 'Vercel'],
+    description: `MN-DEV Portfolio is the website you are browsing right now: my personal portfolio, designed to present my profile as a Software Engineer and Application Security Engineer, my experience, my skills and a selection of my projects. Built as a fast static website without any framework, it is fully bilingual (English and French), data-driven for the projects section, optimized for performance and accessibility, and connected to Google Analytics to measure its audience.`,
+    features: [
+      'Google Analytics 4 (gtag.js) integration to measure traffic, audience and visitor engagement',
+      'Full English/French internationalization with a language switcher, browser language detection, a remembered choice and shareable ?lang= links',
+      'Data-driven portfolio: projects rendered from a single JavaScript data file, with category filters, a "Show more" button and a detailed page per project',
+      'Responsive design for desktop, tablet and mobile, with a high-contrast dark hero and clear calls to action',
+      'Performance optimizations: WebP images, lazy loading, lightweight thumbnails and trimmed web fonts',
+      "Contact form that opens the visitor's email app with a prefilled message, without any backend",
+      'Automatic values: age, years of experience and copyright year are computed in the browser',
+      'SEO and social sharing metadata (title, description, Open Graph) and accessibility improvements (alt texts, keyboard navigation, visible focus)'
+    ],
+    responsibilities: [
+      'Designed the UI/UX and the personal brand identity of the website',
+      'Developed the whole frontend in HTML, CSS and JavaScript on top of a Bootstrap template',
+      'Built a lightweight i18n engine (data-i18n attributes, French dictionary, project translations)',
+      'Integrated Google Analytics 4 to follow the website audience',
+      'Optimized images and loading performance, and deployed the website on Vercel'
+    ],
+    challenges: [
+      'Presenting a double profile (software engineering and application security) clearly in a few seconds',
+      'Supporting two languages on a static website, including dynamically rendered content',
+      'Keeping the website fast while showcasing image-heavy projects'
+    ],
+    solutions: [
+      'Structured the content around a strong hero, grouped skills and a featured AppSec services card',
+      'Kept English in the HTML for SEO and loaded French translations through a small script, with a "languagechange" event to refresh dynamic content',
+      'Generated optimized WebP thumbnails, lazy-loaded the images and gave the cards a fixed aspect ratio for a stable layout'
+    ]
+  },
+  {
     name: 'Weblysoft Website',
     shortDescription: 'Corporate showcase website for Weblysoft LLC',
     categoryLabel: 'Website Development',

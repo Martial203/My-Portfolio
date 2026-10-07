@@ -422,6 +422,39 @@ const projectsFr = {
       "Mécanismes de sécurité de repli pour fournir les gestes de base même hors-ligne"
     ]
   },
+  "MN-DEV Portfolio": {
+    shortDescription: "Ce site lui-même : un portfolio personnel bilingue, optimisé pour la performance, avec Google Analytics",
+    categoryLabel: "Site web (portfolio personnel)",
+    client: "Projet personnel",
+    description: "MN-DEV Portfolio est le site que vous consultez en ce moment : mon portfolio personnel, conçu pour présenter mon profil d'ingénieur logiciel et d'ingénieur en sécurité applicative, mon expérience, mes compétences et une sélection de mes projets. Réalisé comme un site statique rapide, sans framework, il est entièrement bilingue (anglais et français), alimenté par des données pour la partie projets, optimisé pour la performance et l'accessibilité, et connecté à Google Analytics pour mesurer son audience.",
+    features: [
+      "Intégration de Google Analytics 4 (gtag.js) pour mesurer le trafic, l'audience et l'engagement des visiteurs",
+      "Internationalisation complète anglais/français avec sélecteur de langue, détection de la langue du navigateur, choix mémorisé et liens partageables ?lang=",
+      "Portfolio piloté par les données : projets générés à partir d'un unique fichier JavaScript, avec filtres par catégorie, bouton « Voir plus » et page détaillée par projet",
+      "Design responsive pour ordinateur, tablette et mobile, avec un écran d'accueil sombre à fort contraste et des appels à l'action clairs",
+      "Optimisation des performances : images WebP, chargement différé, vignettes légères et polices allégées",
+      "Formulaire de contact qui ouvre l'application mail du visiteur avec un message pré-rempli, sans backend",
+      "Valeurs automatiques : âge, années d'expérience et année du copyright calculés dans le navigateur",
+      "Métadonnées SEO et de partage (titre, description, Open Graph) et améliorations d'accessibilité (textes alternatifs, navigation au clavier, focus visible)"
+    ],
+    responsibilities: [
+      "Conception de l'UI/UX et de l'identité de marque personnelle du site",
+      "Développement de tout le frontend en HTML, CSS et JavaScript, sur la base d'un template Bootstrap",
+      "Création d'un moteur i18n léger (attributs data-i18n, dictionnaire français, traductions des projets)",
+      "Intégration de Google Analytics 4 pour suivre l'audience du site",
+      "Optimisation des images et du chargement, et mise en ligne du site sur Vercel"
+    ],
+    challenges: [
+      "Présenter clairement, en quelques secondes, un double profil (ingénierie logicielle et sécurité applicative)",
+      "Gérer deux langues sur un site statique, y compris pour les contenus générés dynamiquement",
+      "Garder un site rapide tout en présentant des projets riches en images"
+    ],
+    solutions: [
+      "Contenu structuré autour d'un écran d'accueil fort, de compétences regroupées et d'une carte de services AppSec mise en avant",
+      "Anglais conservé dans le HTML pour le SEO, traductions françaises chargées par un petit script, avec un événement « languagechange » pour actualiser les contenus dynamiques",
+      "Vignettes WebP optimisées, images chargées en différé et cartes à ratio fixe pour une mise en page stable"
+    ]
+  },
   "Weblysoft Website": {
     shortDescription: "Site vitrine de l'entreprise Weblysoft LLC",
     categoryLabel: "Développement de site web",
