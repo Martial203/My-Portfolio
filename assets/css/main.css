@@ -986,6 +986,100 @@ section,
   fill: #f3268c;
 }
 
+/* Featured full-width service card (AppSec) */
+.services .service-featured {
+  padding: 50px 40px;
+  text-align: left;
+  border-top: 4px solid var(--accent-color);
+}
+
+.services .service-featured .featured-intro .icon {
+  margin: 0 0 10px 0;
+}
+
+.services .service-featured .featured-intro .icon i {
+  color: var(--accent-color);
+}
+
+.services .service-featured:hover .featured-intro .icon i {
+  color: var(--contrast-color);
+}
+
+.services .service-featured:hover .featured-intro .icon path {
+  fill: var(--accent-color);
+}
+
+.services .service-featured .featured-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.services .service-featured .featured-intro p {
+  font-size: 15px;
+}
+
+.services .service-featured .featured-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  transition: 0.3s;
+}
+
+.services .service-featured .featured-cta:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.services .service-featured .appsec-point {
+  display: flex;
+  gap: 16px;
+  height: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+  transition: 0.3s;
+}
+
+.services .service-featured .appsec-point:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
+}
+
+.services .service-featured .appsec-point i {
+  flex-shrink: 0;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--accent-color);
+}
+
+.services .service-featured .appsec-point h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.services .service-featured .appsec-point p {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@media (max-width: 575px) {
+  .services .service-featured {
+    padding: 40px 20px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
@@ -1456,4 +1550,7 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+.stats .stats-item span.stats-plus::after {
+  content: "+";
 }

@@ -1,12 +1,190 @@
 const categories = {
   "Mobile app": "app",
   "Web app": "product",
-  "Website": "branding"
+  "Website": "branding",
+  "Library": "library"
 }
 
-const categoriesArray = ['Mobile app', 'Web app', 'Website'];
+const categoriesArray = ['Mobile app', 'Web app', 'Website', 'Library'];
 
 var projects = [
+  {
+    name: 'SeTo (Secure Toolkit for Angular)',
+    shortDescription: 'Angular schematics collection that bootstraps a secure, fully tooled Angular project in a single ng add',
+    categoryLabel: 'Library (Angular Schematics)',
+    category: 'library',
+    client: 'Open source (npm)',
+    date: '2026',
+    url: 'https://www.npmjs.com/package/@martiald/seto',
+    coverImage: '/assets/img/portfolio/seto.svg',
+    gallery: ['/assets/img/portfolio/seto.svg'],
+    technologies: ['Angular Schematics', 'TypeScript', 'Angular DevKit', 'ESLint', 'Prettier', 'Husky', 'gitleaks', 'Nginx', 'Docker'],
+    description: `SeTo (Secure Toolkit) is a collection of Angular schematics that sets up, in a single command, everything an Angular project needs to be secure and properly tooled from day one: internationalization, end-to-end encryption of HTTP exchanges, Content Security Policy, production bundle obfuscation, strict linting and automated commit checks. Instead of copy-pasting the same configuration on every new project, "ng add @martiald/seto" asks a few questions and generates a standardized setup, ready for demanding environments such as healthcare, finance or critical infrastructure.`,
+    features: [
+      'Interactive ng add menu to pick the configurations to apply to the project',
+      'i18n setup with Transloco and @martiald/translator',
+      'End-to-end encryption of HTTP exchanges with @martiald/e2e-encryption',
+      'Strict Content Security Policy, Nginx security headers, Dockerfile and dev/prod index.html',
+      'Production bundle obfuscation with javascript-obfuscator',
+      'Strict ESLint, Prettier and lint-staged rules on commit',
+      'Secret detection (Husky + gitleaks) and dependency audit (npm audit) on pre-commit',
+      'Non-interactive mode for CI pipelines and bulk project generation'
+    ],
+    responsibilities: [
+      'Designed and developed the full schematics collection with the Angular DevKit',
+      'Defined a fixed, dependency-aware execution order across schematics',
+      'Wrote the documentation for each schematic (options, generated files, troubleshooting)',
+      'Published and maintain the package on npm'
+    ],
+    challenges: [
+      'Keeping each schematic independent while handling coupling points (CSP and encryption handshake domains, Docker build and obfuscation)',
+      'Safely modifying existing project files (app.config.ts, angular.json, package.json) without breaking user configuration',
+      'Making the same setup usable both interactively and in CI'
+    ],
+    solutions: [
+      'Used Angular DevKit tree transformations to apply idempotent, reviewable changes',
+      'Exposed every prompt as a command-line option for non-interactive usage',
+      'Documented the interactions between schematics to guide configuration choices'
+    ]
+  },
+  {
+    name: 'E2E Encryption for Angular',
+    shortDescription: 'Angular interceptor and services for end-to-end encryption and decryption of HTTP requests and responses',
+    categoryLabel: 'Library (Angular / Security)',
+    category: 'library',
+    client: 'Open source (npm)',
+    date: '2026',
+    url: 'https://www.npmjs.com/package/@martiald/e2e-encryption',
+    coverImage: '/assets/img/portfolio/e2e-encryption.svg',
+    gallery: ['/assets/img/portfolio/e2e-encryption.svg'],
+    technologies: ['Angular', 'TypeScript', 'RxJS', 'Web Crypto API', 'X25519', 'HKDF-SHA256', 'AES-GCM'],
+    description: `@martiald/e2e-encryption is an Angular library that encrypts and decrypts HTTP exchanges between the frontend and a compatible backend, on top of TLS. On startup, the client performs a key-exchange handshake with the server (ECDH X25519) and derives a shared session key with HKDF-SHA256. An HTTP interceptor then transparently encrypts outgoing payloads and decrypts incoming responses with AES-GCM, including file uploads and downloads.`,
+    features: [
+      'Plug-and-play setup with provideE2EEncryption() and a functional HTTP interceptor',
+      'ECDH (X25519) key exchange with HKDF-SHA256 session key derivation, aligned with a Java backend implementation',
+      'AES-GCM encryption and decryption of JSON payloads',
+      'Encryption of files in FormData and decryption of encrypted Blob downloads',
+      'Handshake retries with exponential backoff and reactive (Signal-based) session state for the UI',
+      'Built entirely on the browser native Web Crypto API'
+    ],
+    responsibilities: [
+      'Designed the handshake and session key derivation protocol with the backend team',
+      'Implemented the CryptoService, HTTP interceptor and providers',
+      'Ensured byte-level compatibility of HKDF and payload formats with the Java backend',
+      'Published and maintain the package on npm'
+    ],
+    challenges: [
+      'Matching cryptographic primitives and encodings exactly between browser and Java implementations',
+      'Avoiding concurrent handshakes when several requests start at the same time',
+      'Handling binary content (files) in addition to JSON payloads'
+    ],
+    solutions: [
+      'Implemented HKDF-SHA256 explicitly to mirror the backend implementation',
+      'Shared a single in-flight handshake Observable across concurrent requests',
+      'Added dedicated helpers for FormData encryption and Blob decryption'
+    ]
+  },
+  {
+    name: 'Translator for Angular',
+    shortDescription: 'Angular service for setting up and dynamically switching the app language, with persistence across reloads',
+    categoryLabel: 'Library (Angular / i18n)',
+    category: 'library',
+    client: 'Open source (npm)',
+    date: '2026',
+    url: 'https://www.npmjs.com/package/@martiald/translator',
+    coverImage: '/assets/img/portfolio/translator.svg',
+    gallery: ['/assets/img/portfolio/translator.svg'],
+    technologies: ['Angular', 'TypeScript', 'Transloco'],
+    description: `@martiald/translator is an Angular service that wraps @jsverse/transloco to manage the application's active language and persist it in localStorage, so the user's language choice survives page reloads. It provides a small, consistent API used across projects to initialize the language at startup and switch it dynamically.`,
+    features: [
+      'initLanguage() restores the saved language at startup, or keeps Transloco default',
+      'setLanguage() switches the active language dynamically and persists it',
+      'getLanguage() returns the currently active language',
+      'Works on top of an existing Transloco setup without replacing it'
+    ],
+    responsibilities: [
+      'Designed and developed the library and its public API',
+      'Integrated it into the SeTo translation schematic',
+      'Published and maintain the package on npm'
+    ],
+    challenges: [
+      'Providing a reusable language-management layer without duplicating Transloco configuration'
+    ],
+    solutions: [
+      'Kept Transloco as a peer dependency and limited the library to active-language management and persistence'
+    ]
+  },
+  {
+    name: 'iSA SFA',
+    shortDescription: 'Sales Force Automation mobile app with route optimization for field sales agents',
+    categoryLabel: 'Mobile App (Sales Force Automation · Route Optimization)',
+    category: 'app',
+    client: 'ISNOV SARL',
+    date: '2025-2026',
+    url: 'https://isnov.com/home/nos-produits/isa-sfa-comment-booster-la-performance-de-votre-force-de-vente/',
+    coverImage: '/assets/img/portfolio/isa-sfa.jpg',
+    gallery: ['/assets/img/portfolio/isa-sfa.jpg'],
+    technologies: ['Ionic', 'Angular', 'Capacitor', 'TypeScript'],
+    description: `iSA SFA is a Sales Force Automation mobile application by ISNOV SARL, integrated with the INOV ERP. It helps commercial teams in distribution, industry, services and petroleum sectors plan and track customer visits, access customer data (order history, preferences, outstanding debts), check product availability and place orders directly from the field, while supervisors monitor activity and performance through dashboards. I contributed to several features of the app and notably developed the routing module, which computes the optimal itinerary for each sales agent based on their planned visits, minimizing the distance travelled and fuel consumption.`,
+    features: [
+      'Route optimization: optimal visit order and itinerary computed from the agent planned visits',
+      'Real-time visit planning, tracking and justification with geolocation',
+      'Centralized customer data: order history, purchase preferences and outstanding debts',
+      'Product availability check and order placement from the field',
+      'Offline mode with automatic data synchronization once connected',
+      'Dashboards and performance indicators for supervisors'
+    ],
+    responsibilities: [
+      'Designed and developed the routing module that computes the shortest itinerary through the planned visits',
+      'Integrated the optimized route into the agent visit workflow',
+      'Contributed to the development of other features of the mobile app',
+      'Integrated the app with the INOV ERP backend'
+    ],
+    challenges: [
+      'Finding the best visit order among many customers, a problem whose complexity grows quickly with the number of visits',
+      'Keeping route computation fast enough on mobile devices',
+      'Supporting field agents working with unreliable network coverage'
+    ],
+    solutions: [
+      'Built a dedicated routing module optimizing the visit order to reduce total distance and fuel consumption',
+      'Kept the computation lightweight to deliver results quickly on the device',
+      'Relied on offline-first data storage with synchronization when the network is available'
+    ]
+  },
+  {
+    name: 'Laboussole Emploi',
+    shortDescription: 'Job search platform to find job offers, build a professional CV and write cover letters',
+    categoryLabel: 'Web Application (Job Board)',
+    category: 'product',
+    client: 'Laboussole',
+    date: '2026',
+    url: 'https://laboussole-edu.com/',
+    coverImage: '/assets/img/portfolio/laboussole.png',
+    gallery: ['/assets/img/portfolio/laboussole.png'],
+    technologies: ['Angular', 'TailwindCSS', 'TypeScript'],
+    description: `Laboussole Emploi is a web platform that helps job seekers find their dream job. Users can search job offers by keyword and location, browse the most recent offers, and use dedicated tools to build a professional CV and write their cover letter.`,
+    features: [
+      'Job search by job title, keyword and location',
+      'Listing of recent job offers',
+      'Professional CV builder ("Mon CV pro")',
+      'Cover letter tool ("Ma lettre de motivation")',
+      'User registration and authentication',
+      'Responsive interface for desktop and mobile'
+    ],
+    responsibilities: [
+      'Developed the web application frontend using Angular and TailwindCSS',
+      'Implemented the job search, offer listing and user account flows',
+      'Integrated the backend REST APIs'
+    ],
+    challenges: [
+      'Offering a fast and intuitive search experience over a large number of offers',
+      'Building user-friendly CV and cover letter tools'
+    ],
+    solutions: [
+      'Used reusable Angular components and TailwindCSS for a consistent, responsive UI',
+      'Structured the search and listing views around keyword and location filters'
+    ]
+  },
   // {
   //   name: 'Afrilease',
   //   shortDescription: 'Mobile-first platform for streamlined rental property management',
