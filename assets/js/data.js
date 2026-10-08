@@ -115,6 +115,42 @@ var projects = [
     ]
   },
   {
+    name: 'XSS Sanitization for Angular',
+    shortDescription: 'Angular HTTP interceptor that sanitizes outgoing request payloads against XSS with DOMPurify',
+    categoryLabel: 'Library (Angular / Security)',
+    category: 'library',
+    client: 'Open source (npm)',
+    date: '2026',
+    url: 'https://www.npmjs.com/package/@martiald/xss-sanitization',
+    coverImage: '/assets/img/portfolio/xss-sanitization.svg',
+    gallery: ['/assets/img/portfolio/xss-sanitization.svg'],
+    technologies: ['Angular', 'TypeScript', 'DOMPurify', 'HttpInterceptorFn'],
+    description: `@martiald/xss-sanitization is an Angular library that protects applications against Cross-Site Scripting (XSS) by sanitizing user input before it leaves the browser. A functional HTTP interceptor walks through every outgoing request body, cleans each string value with DOMPurify and forwards a sanitized copy to the backend, so malicious HTML or scripts never reach the server or get stored and replayed to other users. It also blocks prototype pollution keys and leaves files and binary payloads untouched.`,
+    features: [
+      'Plug-and-play functional interceptor (xssSanitizerInterceptor) registered with provideHttpClient(withInterceptors(...))',
+      'Recursive sanitization of every string in JSON request bodies, including nested objects and arrays',
+      'String values cleaned with DOMPurify using its HTML profile',
+      'Prototype pollution protection: __proto__, constructor and prototype keys are dropped',
+      'FormData, Blob, File and ArrayBuffer payloads are passed through untouched so file uploads keep working',
+      'Works on a deep copy of the body (structuredClone), never mutating the original request data'
+    ],
+    responsibilities: [
+      'Designed and developed the library and its interceptor',
+      'Defined which payload types are sanitized and which are passed through',
+      'Published and maintain the package on npm'
+    ],
+    challenges: [
+      'Sanitizing arbitrary, deeply nested payloads without corrupting non-string data',
+      'Not breaking file uploads and binary requests',
+      'Avoiding side effects on the data still used by the application'
+    ],
+    solutions: [
+      'Recursive traversal with Reflect.ownKeys that only sanitizes strings and keeps numbers, booleans and dates as they are',
+      'Explicit pass-through for FormData, Blob, File, ArrayBuffer, Date and RegExp instances',
+      'Sanitization applied to a structuredClone of the body and sent through req.clone()'
+    ]
+  },
+  {
     name: 'iSA SFA',
     shortDescription: 'Sales Force Automation mobile app with route optimization for field sales agents',
     categoryLabel: 'Mobile App (Sales Force Automation · Route Optimization)',

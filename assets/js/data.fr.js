@@ -86,6 +86,35 @@ const projectsFr = {
       "Transloco conservé comme peer dependency, la librairie se limitant à la gestion et à la persistance de la langue active"
     ]
   },
+  "XSS Sanitization for Angular": {
+    shortDescription: "Intercepteur HTTP Angular qui assainit les données des requêtes sortantes contre les failles XSS avec DOMPurify",
+    categoryLabel: "Librairie (Angular / Sécurité)",
+    client: "Open source (npm)",
+    description: "@martiald/xss-sanitization est une librairie Angular qui protège les applications contre les attaques Cross-Site Scripting (XSS) en assainissant les saisies des utilisateurs avant qu'elles ne quittent le navigateur. Un intercepteur HTTP fonctionnel parcourt le corps de chaque requête sortante, nettoie chaque chaîne de caractères avec DOMPurify et transmet une copie assainie au backend : le HTML ou les scripts malveillants n'atteignent jamais le serveur et ne peuvent pas être stockés puis réaffichés à d'autres utilisateurs. Elle bloque aussi les clés de pollution de prototype et laisse intacts les fichiers et les contenus binaires.",
+    features: [
+      "Intercepteur fonctionnel prêt à l'emploi (xssSanitizerInterceptor), à déclarer avec provideHttpClient(withInterceptors(...))",
+      "Assainissement récursif de toutes les chaînes des corps de requête JSON, y compris les objets et tableaux imbriqués",
+      "Chaînes nettoyées avec DOMPurify en utilisant son profil HTML",
+      "Protection contre la pollution de prototype : les clés __proto__, constructor et prototype sont ignorées",
+      "Les FormData, Blob, File et ArrayBuffer sont transmis tels quels pour ne pas casser l'envoi de fichiers",
+      "Travail sur une copie profonde du corps (structuredClone), sans jamais modifier les données d'origine"
+    ],
+    responsibilities: [
+      "Conception et développement de la librairie et de son intercepteur",
+      "Définition des types de contenus à assainir et de ceux à laisser passer",
+      "Publication et maintenance du package sur npm"
+    ],
+    challenges: [
+      "Assainir des données arbitraires et profondément imbriquées sans altérer les valeurs non textuelles",
+      "Ne pas casser l'envoi de fichiers et les requêtes binaires",
+      "Éviter tout effet de bord sur les données encore utilisées par l'application"
+    ],
+    solutions: [
+      "Parcours récursif avec Reflect.ownKeys qui n'assainit que les chaînes et conserve tels quels nombres, booléens et dates",
+      "Exclusion explicite des instances FormData, Blob, File, ArrayBuffer, Date et RegExp",
+      "Assainissement appliqué à un structuredClone du corps, envoyé via req.clone()"
+    ]
+  },
   "iSA SFA": {
     shortDescription: "Application mobile de Sales Force Automation avec optimisation des tournées des commerciaux terrain",
     categoryLabel: "Application mobile (Sales Force Automation · Optimisation de tournées)",
