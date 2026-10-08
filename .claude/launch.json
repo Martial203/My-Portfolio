@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "4320"],
+      "port": 4320
+    },
+    {
+      "name": "okfoods",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "../okfoods-cameroun", "run", "start", "--", "--port", "4310"],
+      "port": 4310
+    }
+  ]
+}

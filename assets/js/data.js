@@ -260,6 +260,56 @@ var projects = [
   //   rate: 1
   // },
   {
+    name: 'OK Foods Cameroon (Redesign Concept)',
+    shortDescription: 'Redesign concept for the corporate website of OK Foods Cameroon, a Douala-based food manufacturer',
+    categoryLabel: 'Website (Redesign Concept)',
+    category: 'branding',
+    client: 'Concept (unsolicited proposal, not affiliated with OK Foods)',
+    date: '2026',
+    url: 'https://ok-foods-cameroun.vercel.app',
+    coverImage: '/assets/img/portfolio/okfoods-home.png',
+    gallery: ['/assets/img/portfolio/okfoods-home.png', '/assets/img/portfolio/okfoods-about.png', '/assets/img/portfolio/okfoods-brands.png', '/assets/img/portfolio/okfoods-careers.png'],
+    technologies: ['Angular', 'TypeScript', 'TailwindCSS', 'RxJS', 'Signals', 'Google Analytics 4', 'Vercel'],
+    description: `This project is a redesign concept I proposed for the corporate website of OK Foods Cameroon, a manufacturer of biscuits, confectionery and dairy products based in Bonaberi, Douala. It stems from an audit I conducted of the website currently in production and from a critical analysis of the user experience it delivers: information that is hard to find, a dated brand image and missing paths for the audiences that matter most to the company. Built as part of a commercial proposal, it was not commissioned and is not the company's official website.
+
+Beyond the visual redesign, the concept was designed around business goals. Each page serves a specific audience: distributors and partners, through a "Partnership" call to action present on every page; consumers, through a brand and product catalog; candidates, through a complete recruitment path; and every visitor, through trust signals such as quality certifications and the company history. Google Analytics 4 is integrated to measure traffic, audience and visitor behavior, so that decisions on the website can rely on data, and SEO metadata improves the company's visibility in search engines.`,
+    features: [
+      'Google Analytics 4 integration to measure traffic, audience and engagement, and drive the website with data',
+      'Lead generation: a "Partnership" call to action on every page to capture distributor and B2B partner requests',
+      'Trust signals: highlighted ISO 9001 / ISO 22000 certifications, company history and news section',
+      'SEO metadata (title and description) to improve visibility in search engines',
+      'Five pages: Home, About Us, Our Brands, Careers and Contact, lazy-loaded with the Angular router',
+      'Full French/English internationalization with a language switcher, browser language detection and a remembered choice',
+      'Brand catalog with one tab per brand, product sheets and variants, and direct links to a given brand',
+      'Interactive company timeline retracing the history of the company since 1998',
+      'Careers page with job openings and an application form (validation, PDF CV upload, prefilled cover message)',
+      'Contact page with a validated contact form and an embedded map of the production site',
+      'Scroll-triggered animations based on IntersectionObserver',
+      'Content (brands, products, jobs, timeline, departments) driven by JSON data files'
+    ],
+    responsibilities: [
+      'Audited the website in production and produced a critical analysis of its user experience',
+      'Defined the target audiences (partners, consumers, candidates) and the conversion path for each of them',
+      'Designed the UI/UX and the visual direction of the redesign',
+      'Integrated Google Analytics 4 and the SEO metadata',
+      'Developed the whole frontend with Angular (standalone components, signals) and TailwindCSS',
+      'Built a lightweight translation service and pipe for the bilingual content',
+      'Deployed the concept on Vercel for the client presentation'
+    ],
+    challenges: [
+      'Turning a showcase website into a business tool that generates partnership requests and applications',
+      'Giving a modern, consistent look to a multi-brand company where each brand has its own colors',
+      'Delivering a convincing, fully navigable demo in a short time for a commercial proposal',
+      'Keeping all the content bilingual without a backend'
+    ],
+    solutions: [
+      'Clear calls to action for each audience and audience measurement with Google Analytics 4',
+      'Brand-specific accent colors applied on top of a shared design system built with TailwindCSS',
+      'Data-driven pages fed by JSON files so the content can be updated without touching components',
+      'Signal-based translation service loading JSON dictionaries and persisting the selected language'
+    ]
+  },
+  {
     name: "Bantou Food",
     shortDescription: "A cultural African food recipe app with step-by-step instructions and geolocated restaurants.",
     categoryLabel: "Mobile App",

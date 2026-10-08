@@ -484,6 +484,47 @@ const projectsFr = {
       "Vignettes WebP optimisées, images chargées en différé et cartes à ratio fixe pour une mise en page stable"
     ]
   },
+  "OK Foods Cameroon (Redesign Concept)": {
+    shortDescription: "Concept de refonte du site institutionnel d'OK Foods Cameroun, industriel agroalimentaire basé à Douala",
+    categoryLabel: "Site web (concept de refonte)",
+    client: "Concept (proposition non commandée, sans affiliation avec OK Foods)",
+    description: "Ce projet est un concept de refonte que j'ai proposé pour le site institutionnel d'OK Foods Cameroun, fabricant de biscuits, de confiserie et de produits laitiers basé à Bonaberi, à Douala. Il est né de l'audit que j'ai mené sur le site actuellement en production et de mon analyse critique de l'expérience utilisateur qu'il offre : informations difficiles à trouver, image de marque datée et absence de parcours dédiés aux publics qui comptent le plus pour l'entreprise. Réalisé dans le cadre d'une proposition commerciale, il n'a pas été commandé et ne constitue pas le site officiel de l'entreprise.\n\nAu-delà de la refonte visuelle, le concept a été pensé autour d'objectifs business. Chaque page s'adresse à un public précis : les distributeurs et partenaires, grâce à un appel à l'action « Partenariat » présent sur toutes les pages ; les consommateurs, avec un catalogue des marques et des produits ; les candidats, avec un parcours de recrutement complet ; et tous les visiteurs, avec des éléments de réassurance comme les certifications qualité et l'historique de l'entreprise. Google Analytics 4 est intégré pour mesurer le trafic, l'audience et le comportement des visiteurs, afin de piloter le site à partir de données, et des métadonnées SEO améliorent la visibilité de l'entreprise dans les moteurs de recherche.",
+    features: [
+      "Intégration de Google Analytics 4 pour mesurer le trafic, l'audience et l'engagement, et piloter le site par la donnée",
+      "Génération de leads : appel à l'action « Partenariat » sur toutes les pages pour recueillir les demandes de distributeurs et de partenaires B2B",
+      "Éléments de réassurance : certifications ISO 9001 / ISO 22000 mises en avant, historique de l'entreprise et section actualités",
+      "Métadonnées SEO (titre et description) pour améliorer la visibilité dans les moteurs de recherche",
+      "Cinq pages : Accueil, À propos, Nos marques, Carrières et Contact, chargées à la demande par le routeur Angular",
+      "Internationalisation complète français/anglais avec sélecteur de langue, détection de la langue du navigateur et choix mémorisé",
+      "Catalogue des marques avec un onglet par marque, fiches produits et variantes, et liens directs vers une marque",
+      "Frise chronologique interactive retraçant l'histoire de l'entreprise depuis 1998",
+      "Page Carrières avec les offres d'emploi et un formulaire de candidature (validation, envoi du CV en PDF, message pré-rempli)",
+      "Page Contact avec un formulaire validé et une carte intégrée du site de production",
+      "Animations au défilement basées sur IntersectionObserver",
+      "Contenus (marques, produits, offres, historique, départements) alimentés par des fichiers JSON"
+    ],
+    responsibilities: [
+      "Audit du site en production et analyse critique de son expérience utilisateur",
+      "Définition des publics cibles (partenaires, consommateurs, candidats) et du parcours de conversion de chacun",
+      "Conception de l'UI/UX et de la direction visuelle de la refonte",
+      "Intégration de Google Analytics 4 et des métadonnées SEO",
+      "Développement de tout le frontend avec Angular (composants standalone, signals) et TailwindCSS",
+      "Création d'un service et d'un pipe de traduction légers pour le contenu bilingue",
+      "Mise en ligne du concept sur Vercel pour la présentation au client"
+    ],
+    challenges: [
+      "Transformer un site vitrine en véritable outil business, générateur de demandes de partenariat et de candidatures",
+      "Donner une image moderne et cohérente à une entreprise multimarque où chaque marque a ses propres couleurs",
+      "Livrer rapidement une démo convaincante et entièrement navigable pour une proposition commerciale",
+      "Garder tout le contenu bilingue sans backend"
+    ],
+    solutions: [
+      "Appels à l'action clairs pour chaque public et mesure de l'audience avec Google Analytics 4",
+      "Couleurs d'accent propres à chaque marque, appliquées sur un design system commun construit avec TailwindCSS",
+      "Pages pilotées par des fichiers JSON pour mettre à jour le contenu sans toucher aux composants",
+      "Service de traduction basé sur les signals, qui charge des dictionnaires JSON et mémorise la langue choisie"
+    ]
+  },
   "Weblysoft Website": {
     shortDescription: "Site vitrine de l'entreprise Weblysoft LLC",
     categoryLabel: "Développement de site web",

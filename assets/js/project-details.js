@@ -38,7 +38,7 @@ function renderProject(index, withGallery = true) {
   const detailHTML = `
     <div class="portfolio-description bg-white rounded">
       <h2 class="fw-bold mb-4">${p.name}</h2>
-      ${createSection(I18N.t('details.description'), p.description ? `<p class="mb-3">${p.description}</p>` : '')}
+      ${createSection(I18N.t('details.description'), p.description ? p.description.trim().split(/\n\s*\n/).map(para => `<p class="mb-3">${para}</p>`).join('') : '')}
       ${createSection(I18N.t('details.features'), createList(p.features))}
       ${createSection(I18N.t('details.responsibilities'), createList(p.responsibilities))}
       ${createSection(I18N.t('details.challenges'), createList(p.challenges))}
