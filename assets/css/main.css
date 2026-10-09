@@ -166,14 +166,29 @@ h6 {
   }
 }
 
+/* On desktop the header is a transparent full-height column: let clicks pass
+   through it so it does not block the page content, except on the menu items */
+@media (min-width: 1200px) {
+  .header,
+  .header .navmenu ul {
+    pointer-events: none;
+  }
+
+  .header .navmenu a {
+    pointer-events: auto;
+  }
+}
+
 @media (min-width: 1200px) and (max-width: 1600px) {
   .header~main {
     margin-left: 160px;
   }
 
+  /* 100% + the main margin instead of 100vw, which includes the vertical
+     scrollbar and caused a horizontal scroll */
   .header~main .hero {
     margin-left: -160px;
-    width: 100vw;
+    width: calc(100% + 160px);
   }
 }
 
